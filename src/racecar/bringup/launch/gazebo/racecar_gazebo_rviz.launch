@@ -14,6 +14,7 @@
           args="-d $(find bringup)/rviz/racecar_urdf.rviz" required="true"/>
 
 
-<node name="gazebo_odometry" pkg="racecar_description" type="gazebo_odometry.py"/>
+<!--<node name="gazebo_odometry" pkg="racecar_description" type="gazebo_odometry.py"/>-->
+<node name="odom_pub" pkg="racecar_description" type="odom_pub.py"/>
 
 </launch>

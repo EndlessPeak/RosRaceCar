@@ -11,7 +11,7 @@ TebLocalPlannerROS:
   
   #覆盖全局规划器提供的局部子目标的方向;规划局部路径时会覆盖掉全局路径点的方位角,
   #对于车辆的2D规划,可以设置为False,可实现对全局路径的更好跟踪。
-  global_plan_overwrite_orientation: True
+  global_plan_overwrite_orientation: False
 
 #指定考虑优化的全局计划子集的最大长度,如果为0或负数：禁用；长度也受本地Costmap大小的限制
   max_global_plan_lookahead_dist: 3.0 
@@ -33,11 +33,11 @@ TebLocalPlannerROS:
   publish_feedback: False
 
   # Robot
-  max_vel_x: 3
-  max_vel_x_backwards: 1
-  max_vel_theta: 2
+  max_vel_x: 4 #speed
+  max_vel_x_backwards: 2
+  max_vel_theta: 1
   acc_lim_x: 3
-  acc_lim_theta: 2
+  acc_lim_theta: 1
 
   #仅适用于全向轮
   # max_vel_y (double, default: 0.0)  

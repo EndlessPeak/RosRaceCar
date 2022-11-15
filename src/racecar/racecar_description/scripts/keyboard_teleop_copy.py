@@ -17,8 +17,8 @@ CTRL-C to quit
 
 keyBindings = {
   'w':(1,0),
-  'd':(1,-1),
-  'a':(1,1),
+  'd':(0,-1),
+  'a':(0,1),
   's':(-1,0),
 }
 
@@ -29,7 +29,7 @@ def getKey():
    termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
    return key
 
-speed = 1
+speed = 0.3
 turn = 0.6
 
 def vels(speed,turn):
@@ -48,8 +48,14 @@ if __name__=="__main__":
     while(1):
        key = getKey()
        if key in keyBindings.keys():
-        x = keyBindings[key][0]
-        th = keyBindings[key][1]
+        x += keyBindings[key][0]
+        th += keyBindings[key][1]
+        if x > 2:
+          x = 2
+        if th > 1:
+          th = 1
+        elif th < -1:
+          th = -1
        else:
           x = 0
           th = 0

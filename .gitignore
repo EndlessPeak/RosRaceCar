@@ -1,2 +1,6 @@
 build/
 devel/
+src/racecar/.vscode/
+src/racecar/bringup/map/
+src/racecar/racecar_description/worlds/racetrack2.world
+

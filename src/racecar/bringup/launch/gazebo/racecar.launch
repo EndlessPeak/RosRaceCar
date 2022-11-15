@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-	    <!-- 设置launch文件的参数 -->
+	<!-- 设置launch文件的参数 -->
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>
     <arg name="gui" default="true"/>
@@ -18,8 +18,8 @@
         	<arg name="paused" value="$(arg paused)"/>
         	<arg name="use_sim_time" value="$(arg use_sim_time)"/>
         	<arg name="headless" value="$(arg headless)"/>
-		<arg name="world_name" value="$(find racecar_description)/worlds/racetrack.world"/>
-               <!-- .world文件的地址-->
+		    <arg name="world_name" value="$(find racecar_description)/worlds/racetrack2.world"/>
+            <!-- .world文件的地址 racetrack.world-->
     	</include>
 
 	<!-- 加载机器人模型描述参数 -->
@@ -32,7 +32,7 @@
 		<param name="publish_frequency" type="double" value="20.0" />
 		<remap from="/joint_states" to="/racecar/joint_states"/>
 	</node>
-	    <!-- 在gazebo中加载机器人模型-->
+	<!-- 在gazebo中加载机器人模型-->
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
           args="-urdf -model racecar -param robot_description -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)"/> 
 
